@@ -3,6 +3,7 @@ function sum(a: number, b: number): number {
 }
 
 const sum2 = (a: number, b: number): number => {
+	return a + b;
 }
 
 sum(2, 2);
