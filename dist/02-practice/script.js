@@ -14,5 +14,5 @@ function slice(str, start, end) {
     }
     return newStr;
 }
-console.log(slice('test', 2, 3));
+console.log(slice('test', 2));
 //# sourceMappingURL=script.js.map
