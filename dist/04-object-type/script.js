@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 function printPoint(point) {
     console.log(point.x, point.y);
 } // в аргументе мы указываем минимальныый набор того, что нам нужно для работы,
@@ -23,5 +22,4 @@ function printName(user) {
         console.log(`Nice to meet, Mr.${user.firstName}`);
     }
 }
-printName({ firstName: "Alex" });
-//# sourceMappingURL=script.js.map
+printName({ firstName: "Andrey" });

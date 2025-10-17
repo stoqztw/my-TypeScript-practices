@@ -27,4 +27,4 @@ function printName(user: { firstName: string; lastName?: string }): void {
 	}
 }
 
-printName({ firstName: "Alex" });
+printName({ firstName: "Andrey" });

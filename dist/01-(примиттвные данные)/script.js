@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 // numbers
 let x = 10.5;
 let y = 12212n;
@@ -26,4 +25,3 @@ let xx = 'a';
 if (typeof (xx) === 'string') {
     xx.toUpperCase();
 }
-//# sourceMappingURL=script.js.map

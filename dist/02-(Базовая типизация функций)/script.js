@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 function sum(a, b) {
     return a + b;
 }
@@ -19,4 +18,3 @@ function avarage(...nums) {
     return sum / nums.length;
 }
 console.log(avarage(9, 2, 2, 10));
-//# sourceMappingURL=script.js.map

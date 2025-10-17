@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const car = {
     wheels: 4,
     brand: 'BMW',
@@ -16,4 +15,3 @@ const carTwo = {
     wheels: 6,
     isNew: true
 };
-//# sourceMappingURL=script.js.map
