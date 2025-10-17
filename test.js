@@ -1,8 +1,8 @@
 const obj = {
-	name: 'Alex',
-	age: 12
-}
+	name: "Alex",
+	age: 12,
+};
 
-obj.test = 'test';
+obj.test = "test";
 
 console.log(obj);
