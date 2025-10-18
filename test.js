@@ -1,8 +1,5 @@
-const obj = {
-	name: "Alex",
-	age: 12,
-};
+function getCount(str) {
+  return str.match(/[aeiou]/ig) === null ? 0 : str.match(/[aeiou]/ig).length;
+}
 
-obj.test = "test";
-
-console.log(obj);
+console.log(getCount('my pyx'))
