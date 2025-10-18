@@ -2,4 +2,6 @@ function getCount(str) {
   return str.match(/[aeiou]/ig) === null ? 0 : str.match(/[aeiou]/ig).length;
 }
 
-console.log(getCount('my pyx'))
+console.log(getCount('my pyxaaxa'))
+
+console.log(new Set('aaaaababaab'))
