@@ -10,7 +10,7 @@ interface Admin extends User {
 	role: string;
 }
 
-function login(user: { login: string; password: string }): void {
+export function login(user: { login: string; password: string }): void {
 	if (user.login && user.password) {
 		console.log(`Hello, ${user.login}`);
 	} else {
