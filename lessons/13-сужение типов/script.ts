@@ -40,3 +40,5 @@ function example4(animal: Fish | Bird) {
 		animal.fly();
 	}
 }
+
+export {};

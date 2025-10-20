@@ -1,4 +1,3 @@
-"use strict";
 function example(x) {
     if (typeof x === "string") {
         x.toUpperCase();
@@ -42,3 +41,4 @@ function example4(animal) {
         animal.fly();
     }
 }
+export {};

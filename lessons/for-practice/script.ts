@@ -1,25 +1,94 @@
-// function validatePin(pin: string): boolean {
-// 	const arrPin = pin.split("");
+// ✅ Задача 1: Типизированный пользовательский профиль
+// Цель: закрепить interface, type, union, enum.
 
-// 	for (let i = 0; i < arrPin.length; i++) {
-// 		if (typeof arrPin[i] !== "number") {
-// 			return false;
-// 		}
-// 	}
+// Создай типы для описания пользователя:
 
-// 	switch (arrPin.length) {
-// 		case 4:
-// 			return true;
-// 		case 6:
-// 			return true;
-// 		default:
-// 			return false;
-// 	}
-// 	throw new Error("The method or operation is not implemented.");
-// }
+// У пользователя есть id (число), name (строка), role (может быть 'admin', 'user', 'guest'), и isActive (булево).
+// Также у пользователя может быть contact — либо email (строка с @), либо телефон (строка из цифр и +), либо null.
+// Напиши функцию printUserInfo(user), которая выводит в консоль:
+// "Имя: ..., Роль: ..., Статус: активен/неактивен, Контакт: ..."
+// Используй сужение типов, чтобы корректно обработать contact.
 
-function validatePin(pin: string): boolean {
-	return (/\d{4}(\d{2})?/gi).test(pin);
+enum Role {
+	Admin = "admin",
+	User = "user",
+	Guest = "guest",
 }
 
-console.log(validatePin("12324"));
+type Email = string;
+type Phone = string;
+type Contact = Email | Phone | null;
+
+type User = {
+	id: number;
+	name: string;
+	role: Role;
+	isActive: boolean;
+	contact: Contact;
+};
+
+function printUserInfo(user: User): void {
+	const status = user.isActive === true ? "активен" : "не активен";
+	let contact = user.contact === null ? "не указан" : user.contact;
+
+	console.log(
+		`Имя: ${user.name}, Роль: ${user.role}, Статус: ${status}, Контакт: ${contact}`
+	);
+}
+
+const userOne: User = {
+	id: 12,
+	isActive: true,
+	name: "Alex",
+	role: Role.Admin,
+	contact: null,
+};
+
+printUserInfo(userOne);
+
+// ✅ Задача 2: Гибридный объект с фиксированными и динамическими полями
+// Цель: применить interface с индексными сигнатурами и понять ограничения.
+
+// Создай интерфейс Product:
+
+// Обязательные поля: id: string, name: string, price: number
+// Дополнительно: любое количество дополнительных свойств, где ключ — строка, а значение — либо string, либо number
+// Напиши функцию getProductInfo(product), которая:
+
+// Возвращает строку с name и price
+// А также перечисляет все дополнительные свойства (не id, name, price)
+
+interface IProduct {
+	id: string;
+	name: string;
+	price: number;
+	[key: string]: string | number;
+}
+
+function getProductInfo(product: IProduct): string {
+	let result = `Name: ${product.name}; Price: ${product.price}`;
+	const fixedKeys = ["id", "name", "price"];
+	let extraFields: string[] = [];
+
+	for (let key in product) {
+		if (!fixedKeys.includes(key)) {
+			extraFields.push(`${key}: ${product[key]}`);
+		}
+	}
+
+	if (extraFields.length > 0) {
+		return `${result}; Дополнительно: ${extraFields.join("; ")}`;
+	}
+
+	return result;
+}
+
+const product: IProduct = {
+	id: "124",
+	name: "Phone",
+	price: 300,
+	newProp: "yes",
+	model: "IPhone",
+};
+
+console.log(getProductInfo(product));

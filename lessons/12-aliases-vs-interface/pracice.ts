@@ -44,3 +44,5 @@ type TCar = {
 	model: string;
 } & TProduct &
 	TVehicle;
+
+export {};
