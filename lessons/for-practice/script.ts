@@ -92,3 +92,52 @@ const product: IProduct = {
 };
 
 console.log(getProductInfo(product));
+
+// ✅ Задача 2: Безопасная обработка API-ответа
+// Цель: практика union, type guards, intersection.
+
+// Представь, что ты получаешь ответ от API, который может быть:
+
+// Успешным: { status: 'success'; data: { id: number; title: string } }
+// Ошибочным: { status: 'error'; message: string }
+// Создай типы для этих двух случаев.
+// Напиши функцию handleApiResponse(response), которая:
+// Если успех — возвращает data
+// Если ошибка — выбрасывает ошибку с message
+// Убедись, что TypeScript не ругается при доступе к data или message (используй сужение по status).
+
+interface DataResponce {
+	id: number;
+	title: string;
+}
+
+interface SuccessResponce {
+	status: "success";
+	data: DataResponce;
+}
+
+interface ErrorResponce {
+	status: "error";
+	message: string;
+}
+
+function isSuccessResponce(
+	responce: SuccessResponce | ErrorResponce
+): responce is SuccessResponce {
+	return responce.status === "success";
+}
+
+function handleApiResponce(responce: SuccessResponce | ErrorResponce) {
+	if (isSuccessResponce(responce)) {
+		return responce.data;
+	}
+
+	throw new Error(responce.message);
+}
+
+const responceFromApi: ErrorResponce = {
+	status: "error",
+	message: "ERROR 404",
+};
+
+console.log(handleApiResponce(responceFromApi));
