@@ -17,6 +17,6 @@
 // 	throw new Error("The method or operation is not implemented.");
 // }
 function validatePin(pin) {
-    return (/^\d{4}(\d{2})?$/gi).test(pin);
+    return (/\d{4}(\d{2})?/gi).test(pin);
 }
-console.log(validatePin("123224"));
+console.log(validatePin("12324"));
