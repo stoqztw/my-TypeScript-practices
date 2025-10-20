@@ -1,7 +1,8 @@
-function getCount(str) {
-  return str.match(/[aeiou]/ig) === null ? 0 : str.match(/[aeiou]/ig).length;
+var obj = { a: 1 };
+
+function f(x) {
+	x = { a: 5};
 }
 
-console.log(getCount('my pyxaaxa'))
-
-console.log(new Set('aaaaababaab'))
+f(obj);
+console.log(obj);

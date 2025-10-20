@@ -1,5 +1,4 @@
-"use strict";
-function login(user) {
+export function login(user) {
     if (user.login && user.password) {
         console.log(`Hello, ${user.login}`);
     }

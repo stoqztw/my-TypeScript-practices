@@ -6,7 +6,8 @@ interface User {
 
 // много кода...
 
-interface User { // расширяем интрефейс
+interface User {
+	// расширяем интрефейс
 	isOnline?: boolean;
 }
 
@@ -23,7 +24,6 @@ interface Person {
 	yearOfBirth: number;
 }
 
-
 interface Employee extends Person, User {
 	// все свойства с интерфеса Person & User
 }
@@ -31,7 +31,7 @@ interface Employee extends Person, User {
 interface Dev extends Employee {
 	// все свойства Employee & Person & User
 	phone: string; // можно менять свойства
-	level?: 'junior' | 'middle' | 'senior';
+	level?: "junior" | "middle" | "senior";
 	// методы
 	say(): void;
 	code?: () => void;

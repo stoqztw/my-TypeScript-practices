@@ -1,22 +1,25 @@
-function duplicateCount(text: string) {
-	const result = text.toLowerCase().match(/(.)(?=.*\1)/gi);
-	return result !== null ? new Set(result).size : 0;
-}
+// function validatePin(pin: string): boolean {
+// 	const arrPin = pin.split("");
 
-// function duplicateCount(text: string): number {
-// 	const strToArr: string[] = text.toLowerCase().split("");
-// 	const result: string[] = [];
-
-// 	for (let i = 0; i < strToArr.length; i++) {
-// 		for (let j = i + 1; j < strToArr.length; j++) {
-// 			let c = strToArr[i];
-// 			if (strToArr[i] === strToArr[j] && c !== undefined) {
-// 				result.push(c);
-// 			}
+// 	for (let i = 0; i < arrPin.length; i++) {
+// 		if (typeof arrPin[i] !== "number") {
+// 			return false;
 // 		}
 // 	}
 
-// 	return new Set(result).size;
+// 	switch (arrPin.length) {
+// 		case 4:
+// 			return true;
+// 		case 6:
+// 			return true;
+// 		default:
+// 			return false;
+// 	}
+// 	throw new Error("The method or operation is not implemented.");
 // }
 
-console.log(duplicateCount("Indivisibilities"));
+function validatePin(pin: string): boolean {
+	return (/\d{4}(\d{2})?/gi).test(pin);
+}
+
+console.log(validatePin("12324"));
