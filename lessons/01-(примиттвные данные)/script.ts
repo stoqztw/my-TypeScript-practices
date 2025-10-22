@@ -1,5 +1,5 @@
 // numbers
-let x = 10.5;
+export let x = 10.5;
 let y = 12212n;
 let z = NaN;
 

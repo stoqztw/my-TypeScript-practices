@@ -41,6 +41,6 @@
     "moduleDetection": "auto",
     "skipLibCheck": true,
   },
-  "include": ["lessons", "test.ts"],
+  "include": ["lessons/", "test.ts"],
   "exclude": ["node_modules"]
 }

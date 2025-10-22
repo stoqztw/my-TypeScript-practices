@@ -1,4 +1,3 @@
-"use strict";
 // ✅ Задача 1: Типизированный пользовательский профиль
 // Цель: закрепить interface, type, union, enum.
 // Создай типы для описания пользователя:
@@ -62,3 +61,4 @@ const responceFromApi = {
     message: "ERROR 404",
 };
 console.log(handleApiResponce(responceFromApi));
+export {};

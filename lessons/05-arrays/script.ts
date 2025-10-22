@@ -3,7 +3,7 @@ const nums = [1, 2, 3, 4, 5, 6];
 const strs: string[] = [];
 strs.push("test");
 
-console.log(str);
+console.log(strs);
 
 interface Car1 {
 	wheels: number;
