@@ -1,42 +1,14 @@
-// c: Функция createGreeting
-// Напиши перегруженную функцию createGreeting, которая:
+// Дополните решение так, чтобы оно возвращало значение true, если первый переданный аргумент (строка) заканчивается вторым аргументом (также строкой).
 
-// Если передать только имя (string) — возвращает "Hello, Имя!"
-// Если передать имя и язык ('ru' | 'en') — возвращает приветствие на нужном языке:
-// 'en' → "Hello, Имя!"
-// 'ru' → "Привет, Имя!"
-
-function createGreeting(name: string): string;
-function createGreeting(name: string, language: "ru"): string;
-function createGreeting(name: string, language: "en"): string;
-function createGreeting(name: string, language?: "ru" | "en"): string {
-	if (!language) {
-		return `Hello, ${name}!`;
+function solution(str: string, ending: string): boolean {
+	let index = 1;
+	for (let i = ending.length; i > 0; i--) {
+		if (ending.split("")[i - 1] != str.split("")[str.length - index]) {
+			return false;
+		}
+		index++;
 	}
-
-	if (language === "ru") {
-		return `Привет, ${name}!`;
-	}
-
-	return `Hello, ${name}!`;
+	return true;
 }
 
-console.log(createGreeting("Artem", "en"));
-
-// ✅ Задача 2:
-
-const user = {
-	name: "Артём",
-	age: 30,
-	isActive: true,
-};
-
-function getProperty(obj: typeof user, key: "name"): string;
-function getProperty(obj: typeof user, key: "age"): number;
-function getProperty(obj: typeof user, key: "isActive"): boolean;
-function getProperty(
-	obj: typeof user,
-	key: keyof typeof user
-): string | number | boolean {
-	return obj[key];
-}
+console.log(solution("abc", "bc"));

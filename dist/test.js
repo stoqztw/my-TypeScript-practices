@@ -1,22 +1,13 @@
 "use strict";
-// c: Функция createGreeting
-// Напиши перегруженную функцию createGreeting, которая:
-function createGreeting(name, language) {
-    if (!language) {
-        return `Hello, ${name}!`;
+// Дополните решение так, чтобы оно возвращало значение true, если первый переданный аргумент (строка) заканчивается вторым аргументом (также строкой).
+function solution(str, ending) {
+	let index = 1;
+    for (let i = ending.length; i > 0; i--) {
+        if (ending.split("")[i - 1] != str.split("")[str.length - index]) {
+            return false;
+        }
+		index++;
     }
-    if (language === "ru") {
-        return `Привет, ${name}!`;
-    }
-    return `Hello, ${name}!`;
+    return true;
 }
-console.log(createGreeting("Artem", "en"));
-// ✅ Задача 2:
-const user = {
-    name: "Артём",
-    age: 30,
-    isActive: true,
-};
-function getProperty(obj, key) {
-    return obj[key];
-}
+console.log(solution("abc", "vc"));
