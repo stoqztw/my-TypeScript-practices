@@ -1,4 +1,4 @@
-const user = {
+export const user = {
 	id: 123,
 	admin: false,
 	becomeAdmin: function () {
