@@ -141,3 +141,5 @@ const responceFromApi: ErrorResponce = {
 };
 
 console.log(handleApiResponce(responceFromApi));
+
+export {};
