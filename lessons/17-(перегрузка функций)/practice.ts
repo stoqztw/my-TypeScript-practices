@@ -10,3 +10,5 @@ function head(value: any): any {
 }
 
 head([1, 2, 3]);
+
+export{}
