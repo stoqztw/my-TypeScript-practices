@@ -23,3 +23,5 @@ function printArr(arr: unknown[]): void {
 		console.log(item, id, array);
 	});
 }
+
+export{}

@@ -1,14 +1,32 @@
-// Дополните решение так, чтобы оно возвращало значение true, если первый переданный аргумент (строка) заканчивается вторым аргументом (также строкой).
+// const likes = (a: string[]): string => {
+// 	let mess = "";
 
-function solution(str: string, ending: string): boolean {
-	let index = 1;
-	for (let i = ending.length; i > 0; i--) {
-		if (ending.split("")[i - 1] != str.split("")[str.length - index]) {
-			return false;
+// 	if (a.length > 0) {
+// 		for (let i = 0; i < a.length; i++) {
+// 			if (a.length == 1) {
+// 				mess = `${a[i]}`;
+// 			}
+// 		}
+// 	} else {
+// 		mess = "no one";
+// 	}
+
+// 	return mess + " likes this";
+// };
+
+const likes = (a: string[]): string => {
+	let mess = "";
+
+	if (a.length > 0) {
+		for (let i = 0; i < a.length; i++) {
+			let x = a[i] !== undefined ? a[i] : ;
+			x.join
 		}
-		index++;
+	} else {
+		mess = "no one";
 	}
-	return true;
-}
 
-console.log(solution("abc", "bc"));
+	return mess + " likes this";
+};
+
+console.log(likes(['Peter', 'test']));
