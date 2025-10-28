@@ -17,7 +17,7 @@ const obj2 = {
 printPoint(obj2);
 
 // работа с мнимым значением
-function printName(user: { firstName: string; lastName?: string }): void {
+export function printName(user: { firstName: string; lastName?: string }): void {
 	if (user.lastName) {
 		console.log(
 			`Nice to meet, Mr.${user.firstName} ${user.lastName.toUpperCase()}`
