@@ -3,7 +3,7 @@
   "compilerOptions": {
     // File Layout
     // "rootDir": "./src",
-    "outDir": "./dist",
+    "outDir": "lessons/dist",
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
@@ -41,6 +41,6 @@
     "moduleDetection": "auto",
     "skipLibCheck": true,
   },
-  "include": ["lessons/", "test.ts"],
+  "include": ["lessons/", "test.ts", "dist"],
   "exclude": ["node_modules"]
 }
