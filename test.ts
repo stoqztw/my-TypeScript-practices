@@ -71,7 +71,7 @@ console.log(valOne.pop());
 // const users = [
 
 function pluck<T extends object, K extends keyof T>(arr: T[], key: K): T[K][] {
-	return arr.map(obj => obj[key]);
+	return arr.map((obj) => obj[key]);
 }
 
 // ✅ Задача 4: Утилита PartialBy (условные generics)
@@ -98,4 +98,5 @@ type PartialBy<T, K> = (T: T) => void;
 
 const arrT = [1, 2, 3, 4];
 
-arrT.reverse
+arrT.reverse;
+
