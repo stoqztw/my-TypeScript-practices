@@ -18,7 +18,7 @@ function crash(): never {
 	throw new Error('crash');
 }
 
-function avarage(...nums: number[]): number {
+export function avarage(...nums: number[]): number {
 	const sum = nums.reduce((sum, cur) => sum + cur, 0);
 
 	return sum / nums.length;

@@ -1,17 +1,18 @@
-function tupleCreator(first) {
-	let a = first;
+var once = function(fn) {
 
-	return function (second) {
-		a++;
-		return [a, second];
-	};
-}
+    let count = 0;
+    return function(...args){
+        if (count > 0) {
+            return undefined;
+        }
+        count++;
+        return fn(...args);
+    }
+};
 
-const twoTupleWith1 = tupleCreator(1);
-const val1 = twoTupleWith1(2);
-const val2 = twoTupleWith1(2);
-const val3 = twoTupleWith1(2);
+const a = once((a,b,c) => (a + b + c));
+const b = a(1, 2, 3);
+const c = a(1, 2, 3);
 
-console.log(twoTupleWith1, val1)
-console.log(twoTupleWith1, val2)
-console.log(twoTupleWith1, val3)
+console.log(b);
+console.log(c);

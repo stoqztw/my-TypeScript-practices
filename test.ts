@@ -74,4 +74,28 @@ function pluck<T extends object, K extends keyof T>(arr: T[], key: K): T[K][] {
 	return arr.map(obj => obj[key]);
 }
 
+// ✅ Задача 4: Утилита PartialBy (условные generics)
+// Напиши generic-тип PartialBy<T, K>, который делает опциональными только указанные поля K из типа T, а остальные оставляет как есть.
 
+// Пример:
+// interface User {
+//   id: number;
+//   name: string;
+//   email: string;
+//   createdAt: Date;
+// }
+
+// type UserUpdate = PartialBy<User, 'email' | 'name'>;
+// Эквивалентно:
+// {
+//   id: number;
+//   name?: string;
+//   email?: string;
+//   createdAt: Date;
+// }
+
+type PartialBy<T, K> = (T: T) => void;
+
+const arrT = [1, 2, 3, 4];
+
+arrT.reverse
