@@ -60,3 +60,18 @@ valOne.push(1);
 valOne.push(5);
 console.log(valOne.isEmpty());
 console.log(valOne.pop());
+
+// ✅ Задача 3: Функция pluck — извлечение свойства из массива объектов
+// Напиши функцию pluck, которая:
+
+// Принимает массив объектов и ключ свойства
+// Возвращает массив значений этого свойства
+// Сохраняет точный тип значений
+// Пример:
+// const users = [
+
+function pluck<T extends object, K extends keyof T>(arr: T[], key: K): T[K][] {
+	return arr.map(obj => obj[key]);
+}
+
+
