@@ -76,3 +76,24 @@ type PartilalToDO = Partial<ToDo> // делает все поля опциона
 
 type RequiredToDo = Required<ToDo> // делает все поля обязательными
 
+// ReturnType
+
+
+type T001 = ReturnType<typeof  f1>;
+
+// Parametres
+
+function f1(arg: {a: number, b: string}) {
+	return arg.a + arg.b;
+}
+
+type T002 = Parameters<typeof f1>;
+// T002 = [{a: number, b: string}]
+
+// ConstructorParameters
+class Car {
+	constructor (brand: string, model: string) {
+	}
+}
+
+type T003 = ConstructorParameters<typeof Car>; // [brand: string, model: string]
